@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Login</title>
+    <link rel='stylesheet' type='text/css' href='/static/css/login_and_register.css'>
+</head>
+<body>
+    <div id='main_wrapper'>
+        <div id='login'>
+            {{message}}
+            <form action='/Users/login' method='post'>
+                <table>
+                    <tr>
+                        <td><input type='text' name='bc_email' placeholder='bellevue college email'></td>
+                    </tr>
+                    <tr>
+                        <td><input type='password' name='password' placeholder='password'></td>
+                    </tr>
+                    <tr>
+                        <td><input type='submit' value='LOGIN'></td>
+                    </tr>
+                </table>
+
+            </forM>
+        </div>
+        <div id='register'>
+            {% for error in errors %}
+                <p>{{error}}</p>
+            {% endfor %}
+            <form action='/Users/register' method='post'>
+                <table>
+                    <tr>
+                        <td><input type='text' name='name' placeholder='name'></td>
+                    </tr>
+                    <tr>
+                        <td><input type='text' name='bc_email' placeholder='bellevue college email'></td>
+                    </tr>
+                    <tr>
+                        <td><input type='text' name='alt_email' placeholder='alternate email (not required)'></td>
+                    </tr>
+                    <tr>
+                        <td><input type='password' name='password' placeholder='password'></td>
+                    </tr>
+                    <tr>
+                        <td><input type='password' name='confirmed_password' placeholder='confirm password'></td>
+                    </tr>
+                    <tr>
+                        <td><input type='submit' value='REGISTER'></td>
+                    </tr>
+                </table>
+
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>
